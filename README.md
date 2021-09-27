@@ -1,17 +1,14 @@
-# Trabalho de socket
-🔥✌🥵 trabalho de redes de computares para demonstração de socket
+# Projeto Aviões
+    Projeto proposto pelo professor Giácomo Antônio Althoff Bolan, tem como propósito, usar a matemática e a computação gráfica para proteger vidas de possíveis acidentes aéreos. 
 
-![Badge](https://img.shields.io/github/issues/AugustoSavi/TrabalhoSocket)
-![Badge](https://img.shields.io/github/forks/AugustoSavi/TrabalhoSocket)
-![Badge](https://img.shields.io/github/stars/AugustoSavi/TrabalhoSocket)
-![Badge](https://img.shields.io/github/license/AugustoSavi/TrabalhoSocket)
-![Badge](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FAugustoSavi%2FTrabalhoSocket)
+![Badge](https://img.shields.io/github/issues/AugustoSavi/TrabalhoAvioes)
+![Badge](https://img.shields.io/github/forks/AugustoSavi/TrabalhoAvioes)
+![Badge](https://img.shields.io/github/stars/AugustoSavi/TrabalhoAvioes)
+![Badge](https://img.shields.io/github/license/AugustoSavi/TrabalhoAvioes)
+![Badge](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FAugustoSavi%2FTrabalhoAvioes)
 
 ## Status do Projeto
 🚧  🚀 Em construção...  🚧
-## Features
-- [x] MultiJogador
-- [ ] Rotação de angulo do jogador
 
 ## Pré-requisitos
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
@@ -22,7 +19,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/AugustoSavi/TrabalhoSocket
+$ git clone https://github.com/AugustoSavi/ProjetoAvioes
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd TrabalhoSocket
@@ -33,7 +30,7 @@ $ npm install
 # Execute a aplicação em modo de desenvolvimento
 $ npm run dev
 
-# O servidor inciará na porta:3000 - acesse <http://localhost:3333>
+# O servidor inciará na porta:3000 - acesse <http://localhost:3000>
 ```
 
 ## 🛠 Tecnologias

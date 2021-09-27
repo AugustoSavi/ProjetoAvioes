@@ -1,19 +1,19 @@
 {
-  "name": "1st-release",
+  "name": "multiplay",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node .",
+    "start": "nodemon .",
     "dev": "nodemon --watch public server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "nodemon": "^2.0.7",
+    "nodemon": "^2.0.12",
     "socket.io": "^2.3.0"
   }
 }
