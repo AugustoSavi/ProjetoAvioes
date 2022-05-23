@@ -1,11 +1,11 @@
 # Projeto Aviões
     Projeto proposto pelo professor Giácomo Antônio Althoff Bolan, tem como propósito, usar a matemática e a computação gráfica para proteger vidas de possíveis acidentes aéreos. 
 
-![Badge](https://img.shields.io/github/issues/AugustoSavi/TrabalhoAvioes)
-![Badge](https://img.shields.io/github/forks/AugustoSavi/TrabalhoAvioes)
-![Badge](https://img.shields.io/github/stars/AugustoSavi/TrabalhoAvioes)
-![Badge](https://img.shields.io/github/license/AugustoSavi/TrabalhoAvioes)
-![Badge](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FAugustoSavi%2FTrabalhoAvioes)
+![Badge](https://img.shields.io/github/issues/AugustoSavi/ProjetoAvioes)
+![Badge](https://img.shields.io/github/forks/AugustoSavi/ProjetoAvioes)
+![Badge](https://img.shields.io/github/stars/AugustoSavi/ProjetoAvioes)
+![Badge](https://img.shields.io/github/license/AugustoSavi/ProjetoAvioes)
+![Badge](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FAugustoSavi%2FProjetoAvioes)
 
 ## Status do Projeto
 🚧  🚀 Em construção...  🚧
