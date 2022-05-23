@@ -22,7 +22,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 $ git clone https://github.com/AugustoSavi/ProjetoAvioes
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd TrabalhoSocket
+$ cd ProjetoAvioes
 
 # Instale as dependências
 $ npm install
