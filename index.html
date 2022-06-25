@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"
+        integrity="sha512-lbwH47l/tPXJYG9AcFNoJaTMhGvYWhVM9YI43CT+uteTRRaiLCui8snIgyAN8XWgNjNhCqlAUdzZptso6OCoFQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.css"
+        integrity="sha512-oe8OpYjBaDWPt2VmSFR+qYOdnTjeV9QPLJUeqZyprDEQvQLJ9C5PCFclxwNuvb/GQgQngdCXzKSFltuHD3eCxA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="container-fluid">
+    <!-- Direita -->
+    <div class="row">
+        <div class="col-sm">
+            <ul class="nav nav-tabs" id="tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="cadastro-tab" data-toggle="tab" href="#cadastro" role="tab"
+                        aria-controls="cadastro" aria-selected="true">Cadastro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="colisao-tab" data-toggle="tab" href="#colisao" role="tab"
+                        aria-controls="colisao" aria-selected="false">Colisão</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="distancia-tab" data-toggle="tab" href="#distancia" role="tab"
+                        aria-controls="distancia" aria-selected="false">Distancia</a>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+
+                <!-- ABA CADASTRO -->
+                <div class="tab-pane fade show active" id="cadastro" role="tabpanel" aria-labelledby="cadastro-tab">
+
+                    <!-- Inserir -->
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <form id="inserir">
+                                <div class="form-row">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text" for="option">Modo de inserção</label>
+                                        </div>
+                                        <select class="custom-select" 
+                                                id="option_modo_inserir" 
+                                                name="option_modo_inserir" 
+                                                required
+                                                onchange="onChangeModoInserir()">
+                                            <option value="">escolher...</option>
+                                            <option selected value="CARTESIANO">Cartesiano</option>
+                                            <option value="POLAR">Polar</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizing-default">X</span>
+                                            </div>
+                                            <input class="form-control"  step="any" placeholder="X" type="number" id="x" name="x"
+                                                min="-300" max="300" value="0" required>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"
+                                                    id="inputGroup-sizing-default">Raio</span>
+                                            </div>
+                                            <input class="form-control"  step="any" placeholder="Raio" type="number" id="raio"
+                                                name="raio" min="0" max="300" value="0" required>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"
+                                                    id="inputGroup-sizing-default">Direção</span>
+                                            </div>
+                                            <input class="form-control"  step="any" placeholder="Direção" type="number" id="direcao"
+                                                name="direcao" min="-360" max="360" value="0" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizing-default">Y</span>
+                                            </div>
+                                            <input class="form-control"  step="any" placeholder="Y" type="number" id="y" name="y"
+                                                min="-300" max="300" value="0" required>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"
+                                                    id="inputGroup-sizing-default">Angle</span>
+                                            </div>
+                                            <input class="form-control"  step="any" placeholder="Angle" type="number" id="angle"
+                                                name="angle" min="-360" max="360" value="0" required>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"
+                                                    id="inputGroup-sizing-default">Velocidade</span>
+                                            </div>
+                                            <input class="form-control"  step="any" placeholder="Velocidade" type="number"
+                                                id="velocidade" name="velocidade" value="0" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <button type="submit" id="inserir"
+                                        class="btn btn-primary btn-block">Inserir</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Transformação -->
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <form id="transformacao">
+                                <div class="form-row">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text" for="option">Modo de transformação</label>
+                                        </div>
+                                        <select class="custom-select" id="option" name="option" required>
+                                            <option selected value="">escolher...</option>
+                                            <option value="TRANSLANDAR">Translandar</option>
+                                            <option value="ESCALONAR">Escalonar</option>
+                                            <option value="ROTACIONAR">Rotacionar</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizing-default">X</span>
+                                            </div>
+                                            <input class="form-control"  step="any" placeholder="X" type="number" id="x" name="x"
+                                                min="-300" max="300" value="0" step="0.01" required>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizing-default">Y</span>
+                                            </div>
+                                            <input class="form-control"  step="any" placeholder="Y" type="number" id="y" name="y"
+                                                min="-300" max="300" value="0" step="0.01" required>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"
+                                                    id="inputGroup-sizing-default">Ângulo</span>
+                                            </div>
+                                            <input class="form-control"  step="any" placeholder="Ângulo" type="number" id="angle"
+                                                name="angle" value="0" step="0.01" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <button type="submit" id="aplicar_transformacao"
+                                        class="btn btn-primary btn-block">Aplicar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Tabela aviões -->
+                    <div class="card tabela-avioes mt-2">
+                        <table id="data-table" class="table"></table>
+                    </div>
+
+                    <div class="card mt-2">
+                        <button type="button"  id="btn-delete-planes" class="btn btn-outline-danger btn-block" onclick=deletePlanes()>Excluir aviões</button>
+                    </div>
+                </div>
+
+                <!-- ABA COLISÃO -->
+                <div class="tab-pane fade" id="colisao" role="tabpanel" aria-labelledby="colisao-tab">
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <form id="rota-colisao">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizing-default">Tempo
+                                                    mínimo</span>
+                                            </div>
+                                            <input class="form-control"  step="any" type="number" id="tempo_minimo"
+                                                name="tempo_minimo" required>
+                                                <span class="input-group-text" id="inputGroup-sizing-default">segundos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <button type="submit" id="rota-colisao" class="btn btn-primary btn-block">Em rota de
+                                        colisão</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <textarea placeholder="Cálculos" class="mt-2" name="resultados-colisao" id="resultados-colisao" cols="70"
+                        rows="10" readonly></textarea>
+                </div>
+
+                <!-- ABA DISTANCIA -->
+                <div class="tab-pane fade" id="distancia" role="tabpanel" aria-labelledby="distancia-tab">
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <form id="distancia-avioes-proximos">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizing-default">Distancia
+                                                    mínima</span>
+                                            </div>
+                                            <input class="form-control"  step="any" type="number" id="distancia_avioes_proximos"
+                                                name="distancia_avioes_proximos">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <button type="submit" id="distancia-avioes-proximos"
+                                        class="btn btn-primary btn-block">Aviões
+                                        próximos</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <form id="distancia-aeroporto">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizing-default">Distancia
+                                                    mínima</span>
+                                            </div>
+                                            <input class="form-control"  step="any" type="number" id="distancia_min_aeroporto"
+                                                name="distancia_min_aeroporto" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <button type="submit" id="distancia-aeroporto"
+                                        class="btn btn-primary btn-block">Aviões
+                                        próximos ao aeroporto</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <textarea placeholder="Resultados" class="mt-2" name="calculos" id="resultados-distancias" cols="70"
+                        rows="10" readonly></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- RADAR -->
+        <div id="sketch-holder" class="col-sm mt-4">
+        </div>
+    </div>
+
+    <script src="./src/Table.js"></script>
+    <script src="./src/main.js "></script>
+    <script src="./src/Utils.js"></script>
+    <script src="./src/Plane.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

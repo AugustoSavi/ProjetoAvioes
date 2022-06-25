@@ -1,0 +1,10 @@
+html,
+body,
+main {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8ff;
+    --color-primary: #363F5E;
+    --color-primary-dark: #192A5E;
+    --color-white: #FFFFFF;
+}

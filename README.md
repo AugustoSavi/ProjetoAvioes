@@ -1,51 +1,70 @@
-# Projeto Aviões
-    Projeto proposto pelo professor Giácomo Antônio Althoff Bolan, tem como propósito, usar a matemática e a computação gráfica para proteger vidas de possíveis acidentes aéreos. 
+<h1 align="center">Trabalho computação grafica</h1>
 
-![Badge](https://img.shields.io/github/issues/AugustoSavi/ProjetoAvioes)
-![Badge](https://img.shields.io/github/forks/AugustoSavi/ProjetoAvioes)
-![Badge](https://img.shields.io/github/stars/AugustoSavi/ProjetoAvioes)
-![Badge](https://img.shields.io/github/license/AugustoSavi/ProjetoAvioes)
-![Badge](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FAugustoSavi%2FProjetoAvioes)
+Trabalho desenvolvido para a materia de Computação Grafica da UNESC
 
-## Status do Projeto
-🚧  🚀 Em construção...  🚧
+<h2 align="center">Features</h2>
 
-## Pré-requisitos
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
-Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+### Inserções
 
-## 🎲 Rodando a aplicação
+- [x] Inserção de avião com cordenada Cartesiana
 
-```bash
-# Clone este repositório
-$ git clone https://github.com/AugustoSavi/ProjetoAvioes
+- [x] Inserção de avião com cordenada Polar
 
-# Acesse a pasta do projeto no terminal/cmd
-$ cd ProjetoAvioes
+- [x] Mostrar no grafico usando cordenas Cartesianas
 
-# Instale as dependências
-$ npm install
+### Modos
 
-# Execute a aplicação em modo de desenvolvimento
-$ npm run dev
+- [x] Modo Translandar
 
-# O servidor inciará na porta:3000 - acesse <http://localhost:3000>
-```
+- [x] Modo Escalonar
 
-## 🛠 Tecnologias
+- [x] Modo Rotacionar
 
-As seguintes ferramentas foram usadas na construção do projeto:
+### Anotações
+    Angulos que são dor de cabeça: 11 graus, 90 graus, 270 graus 
 
-- [Node.js](https://nodejs.org/en/)
-- [Express](https://expressjs.com/)
-- [Socket.io](https://socket.io/)
+### Tabela
+
+- [x] Mostrar os Aviões inseridos na tabela
+
+- [x] Poder selecionar os Aviões na tabela
+
+- [x] Aplicar os modos somente aos aviões selecionados
 
 
-## Referências 
+### Colisão 
 
-Rotação canvas:
-https://www.w3schools.com/graphics/tryit.asp?filename=trygame_movement_keyboard
+- [x] Calculo de ponto e tempo de colisão entre Aviões
 
-Playlist mini jogo multipplay:
-https://www.youtube.com/watch?v=0sTfIZvjYJk&list=PLMdYygf53DP5SVQQrkKCVWDS0TwYLVitL
+### Distancias
+
+- [X] Calculo de distancia entre aviões
+
+- [x] Calculo de distacia dos aviões para o Aeroporto
+
+### Relatorio
+
+- [x] Relatório com todos os eventos
+
+### A mais
+
+- [x] polir o projeto
+
+- [x] Deletar aviões
+
+- [x] Selecionar modo ao inserir
+
+- [x] validar tempo na colisão
+
+- [x] informação de tempo de chegada ao ponto de colisão
+
+- [x] sempre ser necessario informar pelo menos zero nos inputs
+
+- [x] calcular X e Y a partir do raio e angulo
+
+<h2 align="center">Imagens</div><br><br>
+
+![1](.github/1.png)
+![2](.github/2.png)
+![3](.github/3.png)
+![4](.github/4.png)
